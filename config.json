@@ -1,0 +1,8 @@
+{
+  "dsn": {
+	"label": "DSN",
+	"type": "String",
+	"required": true,
+	"help": "Specify your Sentry DSN."
+  }
+}
