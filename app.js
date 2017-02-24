@@ -9,11 +9,9 @@ let sentryClient = null
 _plugin.on('exception', (error) => {
   sentryClient.captureException(error)
 
-  _plugin.logException(new Error(error))
-  // _plugin.logException(JSON.stringify({
-  //   title: 'Log sent to Loggly',
-  //   data: {message: error.message, stack: error.stack, name: error.name}
-  // }))
+  _plugin.log(JSON.stringify({
+    data: {message: error.message, stack: error.stack, name: error.name}
+  }))
 })
 
 _plugin.once('ready', () => {
